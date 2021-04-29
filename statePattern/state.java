@@ -1,72 +1,64 @@
-interface MobileAlertState  
-{
+interface MobileAlertState {
     void ring();
+
     void notifications();
 }
 
-class ToneState implements MobileAlertState
-{
-    public void ring ()
-    {
+class ToneState implements MobileAlertState {
+    public void ring() {
         // ring tone logic
-        System.out.println( "ring tone" );
+        System.out.println("ring tone");
     }
-    public void notifications ()
-    {
+
+    public void notifications() {
         // notification tone logic
-        System.out.println( "notifications tone" );
+        System.out.println("notifications tone");
     }
 }
 
-class VibrateState implements MobileAlertState
-{
-    public void ring ()
-    {
+class VibrateState implements MobileAlertState {
+    public void ring() {
         // ring vibrate logic
-        System.out.println( "Vibrate continually" );
+        System.out.println("Vibrate continually");
     }
-    
-    public void notifications ()
-    {
+
+    public void notifications() {
         // notification vibrate logic
-        System.out.println( "Vibrate Once" );
+        System.out.println("Vibrate Once");
     }
 }
 
-class MuteState implements MobileAlertState
-{
-    
-    public void ring ()
-    {
+class MuteState implements MobileAlertState {
+
+    public void ring() {
         // ring mute logic
-        System.out.println( "the tone is muted" );
+        System.out.println("the tone is muted");
     }
-    
-    public void notifications ()
-    {
+
+    public void notifications() {
         // notification mute logic
-        System.out.println( "the notification in muted" );
+        System.out.println("the notification in muted");
     }
 }
+
 class Phone {
     private MobileAlertState currentState;
-    void setState (MobileAlertState newState)
-    {
+
+    void setState(MobileAlertState newState) {
         currentState = newState;
     }
-    void ring ()
-    {
+
+    void ring() {
         currentState.ring();
     }
-    void notifications ()
-    {
+
+    void notifications() {
         currentState.notifications();
     }
 }
-class Main
-{
-    public static void main(String[] args)
-    {
+
+class MainState {
+    public static void main(String[] args) {
         Phone phone = new Phone();
         phone.setState(new ToneState());
         phone.ring();
