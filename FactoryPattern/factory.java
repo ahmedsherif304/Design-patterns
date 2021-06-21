@@ -1,5 +1,4 @@
 import java.util.Random;
-import java.util.Scanner;
 
 interface Enemy {
 
@@ -9,11 +8,6 @@ interface Enemy {
 }
 
 class Assassin implements Enemy {
-    String name = "";
-
-    void Assassin(String name) {
-        this.name = name;
-    }
 
     @Override
     public void attack() {
@@ -27,12 +21,6 @@ class Assassin implements Enemy {
 }
 
 class Pirate implements Enemy {
-    String name = "";
-
-    void Pirate(String name) {
-        this.name = name;
-    }
-
     @Override
     public void attack() {
         System.out.println("an Pirate is attacking you");
@@ -45,12 +33,6 @@ class Pirate implements Enemy {
 }
 
 class SerialKiller implements Enemy {
-    String name = "";
-
-    void SerialKiller(String name) {
-        this.name = name;
-    }
-
     @Override
     public void attack() {
         System.out.println("an Serial Killer is attacking you");
